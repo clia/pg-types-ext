@@ -10,9 +10,9 @@ pub struct RegType(pub String);
 impl<'a> FromSql<'a> for RegType
 {
     fn from_sql(_ty: &Type, raw: &'a [u8]) -> Result<RegType, Box<dyn Error + Sync + Send>> {
-        for c in raw {
-            print!("{}", String::from(*c as char));
-        }
+        // for c in raw {
+        //     print!("{}", String::from(*c as char));
+        // }
         types::text_from_sql(raw).map(|s| RegType(s.to_string()))
     }
 
