@@ -20,7 +20,7 @@ pub struct RegType(pub String);
 //     accepts!(REGTYPE);
 // }
 
-impl<'a> tokio_postgres::types::FromSql<'a> for RegType
+impl<'a> tokio_postgres::types::FromSql<'_> for RegType
 {
     fn from_sql(_ty: &Type, raw: &[u8]) -> Result<RegType, Box<dyn Error + Sync + Send>> {
         for c in raw {
