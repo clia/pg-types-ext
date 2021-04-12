@@ -1,0 +1,10 @@
+[package]
+name = "pg-types-ext"
+version = "0.1.0"
+authors = ["clia <clia@163.com>"]
+edition = "2018"
+
+[dependencies]
+postgres = "*"
+postgres-types = "*"
+postgres-protocol = "*"
