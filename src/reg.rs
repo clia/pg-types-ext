@@ -7,9 +7,9 @@ use std::fmt::Debug;
 #[derive(Clone, Debug, PartialEq, Eq)]
 pub struct RegType(pub String);
 
-impl<'a> FromSql<'a> for RegType
+impl FromSql<'_> for RegType
 {
-    fn from_sql(_ty: &Type, raw: &'a [u8]) -> Result<RegType, Box<dyn Error + Sync + Send>> {
+    fn from_sql(_ty: &Type, raw: &[u8]) -> Result<RegType, Box<dyn Error + Sync + Send>> {
         for c in raw {
             print!("{}", c);
         }
